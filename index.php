@@ -238,7 +238,17 @@
                     <th scope="col">Edit
 
                     </th>
+                    <th scope="col"><a class="sortresults" href="#" data-sort="Users.hours_pending" data-sortdir="asc" data-parent="" data-parentid="" data-module="Talents" data-mode="searchpage">Hours Pending</a>
+
+                    </th>
+
+                    <th scope="col"><a class="sortresults" href="#" data-sort="Users.hours_booked" data-sortdir="asc" data-parent="" data-parentid="" data-module="Talents" data-mode="searchpage">Hours Booked</a>
+
+                    </th>
                     <th scope="col"><a class="sortresults" href="#" data-sort="Users.hours_worked" data-sortdir="asc" data-parent="" data-parentid="" data-module="Talents" data-mode="searchpage">Hours Worked</a>
+
+                    </th>
+                    <th scope="col"><a class="sortresults" href="#" data-sort="Users.hours_overtime" data-sortdir="asc" data-parent="" data-parentid="" data-module="Talents" data-mode="searchpage">Hours Overtime</a>
 
                     </th>
                     <th scope="col"><a class="sortresults" href="#" data-sort="Talents.name" data-sortdir="asc" data-parent="" data-parentid="" data-module="Talents" data-mode="searchpage">Name</a>
@@ -278,15 +288,21 @@
                             <label class="custom-control-label" for="checkbox-Talents_searchpage_B94028AC-C727-4023-AF21-6A95ABC7D000"></label>
                         </div>
                     </td>
-                    <td></td>
+                
                     <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="D8F53282-D411-4D50-8E70-C318BD2ED24E" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
-                    <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=D8F53282-D411-4D50-8E70-C318BD2ED24E"><b>fur </b></a></td>
-                    <td>Newellton, Louisiana, United States of America</td>
+                    
+                    <td>10</td>  <!-- Pending commit -->
+                    <td>10</td>   <!-- Booked -->
+                    <td>10</td>  <!-- Worked -->
+                    <td>10</td> <!-- Overtime -->
+
+                     <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=D8F53282-D411-4D50-8E70-C318BD2ED24E"><b>Chan Man </b></a></td>
+                    <td>Atlanta, Georgia, United States of America</td>
                     <td><a href="tel:4554545235"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-us-preferred"><span class="iti__flag iti__us"></span>&nbsp;(455) 454-5235</span></a></td>
-                    <td><a class="crmsendemail" data-module="Talents" data-record="test1@g.com" href="#">test1@g.com</a></td>
-                    <td>0.00</td>
+                    <td><a class="crmsendemail" data-module="Talents" data-record="test1@g.com" href="#">chan@mail.com</a></td>
+                    <td>5.00</td>
                     <td>06/28/2021 06:29 PM</td>
-                    <td></td>
+                    <td>General Talent</td>
                     <td>Male</td>
                     <td>06/28/2021 05:38 PM</td>
                 </tr>
@@ -298,14 +314,20 @@
                             <label class="custom-control-label" for="checkbox-Talents_searchpage_9B5177A4-94D1-4B7D-B4C5-468BFB67A0FD"></label>
                         </div>
                     </td>
-                    <td></td>
+                    
                     <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="B94028AC-C727-4023-AF21-6A95ABC7D000" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
+                   
+                    <td>10</td>  <!-- Pending commit -->
+                    <td>10</td>   <!-- Booked -->
+                    <td>10</td>  <!-- Worked -->
+                    <td>10</td> <!-- Overtime -->
+                    
                     <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=B94028AC-C727-4023-AF21-6A95ABC7D000"><b>Moazzam Ali</b></a></td>
-                    <td></td>
+                    <td>Dallas, Texas, United States of America</td>
                     <td><a href="tel:+923144491119"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-pk-preferred"><span class="iti__flag iti__pk"></span>&nbsp;0314 4491119</span></a></td>
                     <td><a class="crmsendemail" data-module="Talents" data-record="mz@tempmail.com" href="#">mz@tempmail.com</a></td>
                     <td>4.00</td>
-                    <td></td>
+                    <td>07/01/2021 07:30 PM</td>
                     <td>General Talent</td>
                     <td>Male</td>
                     <td>06/29/2021 07:05 PM</td>
@@ -317,16 +339,22 @@
                             <label class="custom-control-label" for="checkbox-Talents_searchpage_D8F53282-D411-4D50-8E70-C318BD2ED24E"></label>
                         </div>
                     </td>
-                    <td></td>
+                    
                     <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="D8F53282-D411-4D50-8E70-C318BD2ED24E" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
-                    <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=D8F53282-D411-4D50-8E70-C318BD2ED24E"><b>fur </b></a></td>
-                    <td>Newellton, Louisiana, United States of America</td>
+                    
+                    <td>10</td>  <!-- Pending commit -->
+                    <td>10</td>   <!-- Booked -->
+                    <td>10</td>  <!-- Worked -->
+                    <td>10</td> <!-- Overtime -->
+                    
+                    <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=D8F53282-D411-4D50-8E70-C318BD2ED24E"><b>Andre</b></a></td>
+                    <td>Fort Lauderdale, Florida, United States of America</td>
                     <td><a href="tel:4554545235"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-us-preferred"><span class="iti__flag iti__us"></span>&nbsp;(455) 454-5235</span></a></td>
-                    <td><a class="crmsendemail" data-module="Talents" data-record="test1@g.com" href="#">test1@g.com</a></td>
-                    <td>0.00</td>
-                    <td>06/28/2021 06:29 PM</td>
-                    <td></td>
-                    <td>Male</td>
+                    <td><a class="crmsendemail" data-module="Talents" data-record="test1@g.com" href="#">andre@gmail.com</a></td>
+                    <td>1.00</td>
+                    <td>05/18/2021 04:49 PM</td>
+                    <td>General Talent</td>
+                    <td>Female</td>
                     <td>06/28/2021 05:40 PM</td>
                 </tr>
                 <tr>
@@ -336,8 +364,14 @@
                             <label class="custom-control-label" for="checkbox-Talents_searchpage_9B5177A4-94D1-4B7D-B4C5-468BFB67A0FD"></label>
                         </div>
                     </td>
-                    <td></td>
+                    
                     <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="9B5177A4-94D1-4B7D-B4C5-468BFB67A0FD" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
+                    
+                    <td>10</td>  <!-- Pending commit -->
+                    <td>10</td>   <!-- Booked -->
+                    <td>10</td>  <!-- Worked -->
+                    <td>10</td> <!-- Overtime -->
+                    
                     <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=9B5177A4-94D1-4B7D-B4C5-468BFB67A0FD"><b>Test Account</b></a></td>
                     <td>New York, New York, United States of America</td>
                     <td><a href="tel:12345678912"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-us-preferred"><span class="iti__flag iti__us"></span>&nbsp;(234) 567-8912</span></a></td>
@@ -355,8 +389,14 @@
                             <label class="custom-control-label" for="checkbox-Talents_searchpage_4D90AEF6-8A9E-402C-BA55-FA23033D97C1"></label>
                         </div>
                     </td>
-                    <td></td>
+                    
                     <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="4D90AEF6-8A9E-402C-BA55-FA23033D97C1" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
+                    
+                    <td>10</td>  <!-- Pending commit -->
+                    <td>10</td>   <!-- Booked -->
+                    <td>10</td>  <!-- Worked -->
+                    <td>10</td> <!-- Overtime -->
+                    
                     <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=4D90AEF6-8A9E-402C-BA55-FA23033D97C1"><b>Apple Account</b></a></td>
                     <td>New York, New York, United States of America</td>
                     <td><a href="tel:12345678912"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-us-preferred"><span class="iti__flag iti__us"></span>&nbsp;(234) 567-8912</span></a></td>
@@ -367,25 +407,7 @@
                     <td>Male</td>
                     <td>06/22/2021 06:41 PM</td>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input crmcheckboxaction searchcontainer_Talents_searchpage-searchresult-checkbox" data-container="searchcontainer_Talents_searchpage-searchresult-checkbox" id="checkbox-Talents_searchpage_280D9D3C-C75F-4412-B2D5-EADDD1AF688D">
-                            <label class="custom-control-label" for="checkbox-Talents_searchpage_280D9D3C-C75F-4412-B2D5-EADDD1AF688D"></label>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="280D9D3C-C75F-4412-B2D5-EADDD1AF688D" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
-                    <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=280D9D3C-C75F-4412-B2D5-EADDD1AF688D"><b>Android Account for testing</b></a></td>
-                    <td>New York, New York, United States of America</td>
-                    <td><a href="tel:12345678912"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-us-preferred"><span class="iti__flag iti__us"></span>&nbsp;(234) 567-8912</span></a></td>
-                    <td><a class="crmsendemail" data-module="Talents" data-record="android@yopmail.com" href="#">android@yopmail.com</a></td>
-                    <td>0.00</td>
-                    <td>06/29/2021 09:29 PM</td>
-                    <td>General Talent</td>
-                    <td>Male</td>
-                    <td>04/15/2021 04:08 PM</td>
-                </tr>
+               
                 <tr>
                     <td>
                         <div class="custom-control custom-checkbox">
@@ -393,8 +415,14 @@
                             <label class="custom-control-label" for="checkbox-Talents_searchpage_AD112698-BA7C-4574-AAC6-EFEFB3B16BEF"></label>
                         </div>
                     </td>
-                    <td></td>
+                    
                     <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="AD112698-BA7C-4574-AAC6-EFEFB3B16BEF" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
+                   
+                    <td>10</td>  <!-- Pending commit -->
+                    <td>10</td>   <!-- Booked -->
+                    <td>10</td>  <!-- Worked -->
+                    <td>10</td> <!-- Overtime -->
+                    
                     <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=AD112698-BA7C-4574-AAC6-EFEFB3B16BEF"><b>User Name</b></a></td>
                     <td>New York, New York, United States of America</td>
                     <td><a href="tel:12345678912"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-us-preferred"><span class="iti__flag iti__us"></span>&nbsp;(234) 567-8912</span></a></td>
@@ -412,8 +440,14 @@
                             <label class="custom-control-label" for="checkbox-Talents_searchpage_C342D637-6CD6-4DA5-9C83-8EB057829BA1"></label>
                         </div>
                     </td>
-                    <td></td>
+                 
                     <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="C342D637-6CD6-4DA5-9C83-8EB057829BA1" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
+                    
+                    <td>10</td>  <!-- Pending commit -->
+                    <td>10</td>   <!-- Booked -->
+                    <td>10</td>  <!-- Worked -->
+                    <td>10</td> <!-- Overtime -->
+                    
                     <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=C342D637-6CD6-4DA5-9C83-8EB057829BA1"><b>Harrold Roberts</b></a></td>
                     <td>San Diego, California, United States of America</td>
                     <td><a href="tel:6192000665"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-us-preferred"><span class="iti__flag iti__us"></span>&nbsp;(619) 200-0665</span></a></td>
@@ -431,9 +465,15 @@
                             <label class="custom-control-label" for="checkbox-Talents_searchpage_58BEAE46-C657-41D1-A680-106483A9E528"></label>
                         </div>
                     </td>
-                    <td></td>
+                    
                     <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="58BEAE46-C657-41D1-A680-106483A9E528" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
-                    <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=58BEAE46-C657-41D1-A680-106483A9E528"><b>maxr test</b></a></td>
+                    
+                    <td>10</td>  <!-- Pending commit -->
+                    <td>10</td>   <!-- Booked -->
+                    <td>10</td>  <!-- Worked -->
+                    <td>10</td> <!-- Overtime -->
+                    
+                    <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=58BEAE46-C657-41D1-A680-106483A9E528"><b>max test</b></a></td>
                     <td>Los Vegas, Guanajuato, Mexico</td>
                     <td></td>
                     <td><a class="crmsendemail" data-module="Talents" data-record="ahmedtesting@yopmail.com" href="#">ahmedtesting@yopmail.com</a></td>
@@ -450,9 +490,15 @@
                             <label class="custom-control-label" for="checkbox-Talents_searchpage_42A93556-3ADC-4694-80E1-95B83A0F9B67"></label>
                         </div>
                     </td>
-                    <td></td>
+                    
                     <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="42A93556-3ADC-4694-80E1-95B83A0F9B67" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
-                    <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=42A93556-3ADC-4694-80E1-95B83A0F9B67"><b>Samantha Bills-Owen</b></a></td>
+                    
+                    <td>10</td>  <!-- Pending commit -->
+                    <td>10</td>   <!-- Booked -->
+                    <td>10</td>  <!-- Worked -->
+                    <td>10</td> <!-- Overtime -->
+                    
+                    <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=42A93556-3ADC-4694-80E1-95B83A0F9B67"><b>Sam Owen</b></a></td>
                     <td>Glendale, Arizona, United States of America</td>
                     <td><a href="tel:4805709226"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-us-preferred"><span class="iti__flag iti__us"></span>&nbsp;(480) 570-9226</span></a></td>
                     <td><a class="crmsendemail" data-module="Talents" data-record="truescorpio32@gmail.com" href="#">truescorpio32@gmail.com</a></td>
@@ -462,25 +508,7 @@
                     <td>Female</td>
                     <td>08/16/2020 05:40 AM</td>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input crmcheckboxaction searchcontainer_Talents_searchpage-searchresult-checkbox" data-container="searchcontainer_Talents_searchpage-searchresult-checkbox" id="checkbox-Talents_searchpage_593FD9BB-4723-4B94-AF61-BB4BFB85ACF6">
-                            <label class="custom-control-label" for="checkbox-Talents_searchpage_593FD9BB-4723-4B94-AF61-BB4BFB85ACF6"></label>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td><a name="quickedit" data-module="Talents" class="fas fa-pen-square mr-2 crmcreatebutton" data-createtype="quickedit" data-toggle="modal" data-target="#createrecord" data-parent="" data-parentid="" data-record="593FD9BB-4723-4B94-AF61-BB4BFB85ACF6" data-searchid="222197_1624989361.5778" data-usermode="tenant"></a></td>
-                    <td><a style="color: inherit;" href="https://demo.v2.senegalsoftware.com/Talents/detail?id=593FD9BB-4723-4B94-AF61-BB4BFB85ACF6"><b>Harrold Roberts</b></a></td>
-                    <td>San Diego, California, United States of America</td>
-                    <td><a href="tel:18582621708"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-us-preferred"><span class="iti__flag iti__us"></span>&nbsp;(858) 262-1708</span></a></td>
-                    <td><a class="crmsendemail" data-module="Talents" data-record="robertsharrold77@gmail.com" href="#">robertsharrold77@gmail.com</a></td>
-                    <td>0.00</td>
-                    <td></td>
-                    <td></td>
-                    <td>Male</td>
-                    <td>08/16/2020 01:42 AM</td>
-                </tr>
+            
             </tbody>
         </table>
 
