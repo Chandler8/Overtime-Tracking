@@ -304,7 +304,7 @@
                     <td></td>
                     <td><a href="tel:+923144491119"><span class="iti__selected-flag" aria-activedescendant="iti-6__item-pk-preferred"><span class="iti__flag iti__pk"></span>&nbsp;0314 4491119</span></a></td>
                     <td><a class="crmsendemail" data-module="Talents" data-record="mz@tempmail.com" href="#">mz@tempmail.com</a></td>
-                    <td>0.00</td>
+                    <td>4.00</td>
                     <td></td>
                     <td>General Talent</td>
                     <td>Male</td>
