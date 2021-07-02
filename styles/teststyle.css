@@ -85,3 +85,8 @@ select {
     width: 100%;
     height: 300px;
 }
+
+.pc {
+    font-weight: bold;
+    background-color: yellow;
+}
