@@ -15,50 +15,74 @@
                 <img id="flag" src="https://ibw21.org/wp-content/uploads/2019/01/senegal-flag-910x512.jpg" alt="">
             </div>
             <div class="container">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col" colspan=4>Hours</th>
-                    <th scope="col">Shift</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark Jones</td>
-                    <td class="pc"></td>
-                    <td class="b"></td>
-                    <td class="w"></td>
-                    <td class="ot"></td>
-                    <td>Hawks game valet</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td class="pc"></td>
-                    <td class="b"></td>
-                    <td class="w"></td>
-                    <td class="ot"></td>
-                    <td>Winter Wonderland ticket booth</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry the Bird</td>
-                    <td class="pc"></td>
-                    <td class="b"></td>
-                    <td class="w"></td>
-                    <td class="ot"></td>
-                    <td>No.18 guard duty</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="btn btn-success">Submit</div>
+                <div class="row m-2">
+                    <div class="col">
+                        <label for="name">Name</label>
+                        <input type="text" id="name">
+                    </div>
+                </div>
+                <div class="row m-1">
+                    <div class="row  justify-content-center">
+                        <div class="col-2 align-self-center">Hours to submit:</div>
+                        <div class="col-1">
+                            <label for="pending">Pending</label>
+                            <input type="text" id="pending" size="3">
+                        </div>
+                        <div class="col-1 ml-1">
+                            <label for="booked">Booked</label>
+                            <input type="text" id="booked" size="3">
+                        </div>
+                        <div class="col-1 ml-1">
+                            <label for="worked">Worked</label>
+                            <input type="text" id="worked" size="3">
+                        </div>
+                        <div class="col-1 ml-1">
+                            <label for="ot">Overtime</label>
+                            <input type="text" id="ot" size="3">
+                        </div>
+                        <div class="col-3 ml-1">
+                            <label for="shift">Shift</label>
+                            <input type="text" id="shift">
+                        </div>
+                        <div class="col align-self-center">
+                            <div class="btn btn-success" onclick="addRow()">Submit</div>
+                        </div>
+                    </div>
+                </div>
+                <table id="timetable" class="table table-bordered">
+                    <thead class="text-center">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col" colspan=4>Hours
+                                <div class="row b-0 p-1">
+                                    <div class="col"><small>Pending Commit</small></div>
+                                    <div class="col"><small>Booked</small></div>
+                                    <div class="col"><small>Worked</small></div>
+                                    <div class="col"><small>Potential OT</small></div>
+                                </div>
+                            </th>
+                            <th scope="col">Shift</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark Jones</td>
+                            <td class="pc">10</td>
+                            <td class="b">40</td>
+                            <td class="w"></td>
+                            <td class="ot"></td>
+                            <td>Hawks game valet</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="scripts/myscript.js"></script>
 </body>
 </html>
