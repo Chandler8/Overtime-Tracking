@@ -77,29 +77,10 @@ select {
     Make changes below this commented section. 
 *********************************************************************************************************************/
 
-.container {
-  font-family: 'Crimson Pro', serif;
-  text-align: center;
+#form {
+    display: none;
 }
 
-.days-shift {
-    text-align: left;
-}
-
-#cal-month {
-  font-size: 2em;
-}
-
-td.dates {
-  max-width: 50px;
-}
-
-#shift-form {
-  border: 1px solid black;
-  padding: 10px;
-  display: none;
-}
-
-#add-shift-btn {
-  height: 50px;
+#calendar-container {
+    display: none;
 }
