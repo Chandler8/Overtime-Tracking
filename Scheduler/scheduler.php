@@ -50,9 +50,30 @@
                         </div>
                     </div>
                 </div>
-                <div id="calendar-container" class="container col">
-                    <div class="m-2">
-                        <div id='calendar'></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="container col-4">
+                            <table id="shifts" class="table table-bordered">
+                                <thead>
+                                    <th colspan=2>AVAILABLE SHIFTS</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Shift Name</h4>
+                                        <th>Shift Schedule</h4>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark Harmon's birthday party</td>
+                                        <td>(July 1, 2021) 4pm - 8pm</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="calendar-container" class="container col-8">
+                            <div class="m-2">
+                                <div id='calendar'></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
