@@ -70,13 +70,6 @@
                                         <td><i class="fas fa-plus add-event-btn clickable"></i></td>
                                         <td><i class="fas fa-minus delete-event-btn clickable"></i></td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Chan's party</td>
-                                        <td>7/1/2021 - 7/1/2021, 4pm - 8pm</td>
-                                        <td><i class="fas fa-plus add-event-btn clickable"></i></td>
-                                        <td><i class="fas fa-minus delete-event-btn clickable"></i></td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
