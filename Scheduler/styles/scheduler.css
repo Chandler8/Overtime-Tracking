@@ -107,3 +107,7 @@ td.dates {
 #calendar-container {
   display: none;
 }
+
+.clickable {
+  cursor: pointer;
+}

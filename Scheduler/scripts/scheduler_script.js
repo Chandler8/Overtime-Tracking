@@ -2,13 +2,15 @@ $(document).ready(()=>{
     console.log("Ready!");
 
     $('#shift-form-btn').on('click',showHideForm);
-    $('#add-shift-btn').on('click',createShift);
+    $('#add-shift-btn').on('click',addShift);
+    $(document).on('click',".add-event-btn",addEventToCalendar);
+    $(document).on('click',".delete-event-btn",deleteEventFromCalendar);    
     displayCalendar();
-    
-});
 
-//This function creates and then adds a shift to the shifts table
-function createShift() {
+});
+    
+//This function adds a shift to the shifts table
+function addShift() {
     var shift_title = document.getElementById("shift-title").value;
     var shift_description = document.getElementById("shift-description").value;
     
@@ -44,17 +46,59 @@ function createShift() {
         end_time = end_time_array[0] + ":" + end_time_array[1] + " AM";
     }
 
-    var start_date_time = "(" + start_month + "/" + start_day + "/" + start_year + ", " + start_time + ")";
-    var end_date_time = "(" + end_month + "/" + end_day + "/" + end_year + ", " + end_time + ")";
+    var start_date_time = start_month + "/" + start_day + "/" + start_year + ", " + start_time;
+    var end_date_time = end_month + "/" + end_day + "/" + end_year + ", " + end_time;
+    var shift_num = getShiftNum();
 
-    $("#shifts tbody").append("<tr><td>"+shift_title+"</td><td>"+start_date_time+" - "+end_date_time+"</td></tr>");
+    let tr = $("<tr/>");
+    let shift_num_td = $("<td/>");
+    let shift_title_td = $("<td/>");
+    let duration_td = $("<td/>");
+    let icon1_td = $("<td/>");
+    let icon2_td = $("<td/>");
+    let icon1 = $("<i/>");
+    let icon2 = $("<i/>");
+
+    $(icon1).addClass("fas fa-plus add-event-btn clickable");
+    $(icon2).addClass("fas fa-minus delete-event-btn clickable");
+
+    $(icon2_td).append(icon2);
+    $(icon1_td).append(icon1);
+    $(duration_td).append(start_date_time+" - "+end_date_time);
+    $(shift_title_td).append(shift_title);
+    $(shift_num_td).append(shift_num);
+
+    $(shift_num_td).appendTo(tr);
+    $(shift_title_td).appendTo(tr);
+    $(duration_td).appendTo(tr);
+    $(icon1_td).appendTo(tr);
+    $(icon2_td).appendTo(tr);
+    $("#shifts tbody").append(tr);
+
+    /*$("#shifts tbody").append("<tr><td>"+shift_num+"</td><td>"+shift_title+"</td><td>"+start_date_time+" - "+end_date_time+"</td>"+
+      '<td><i class="fas fa-plus add-event-btn clickable" onclick="addEventToCalendar();"></i></td>'+
+      '<td><i class="fas fa-minus delete-event-btn clickable" onclick="deleteEventFromCalendar();"></i></td></tr>');*/
 
     clearForm();
-    addShift(start_day,shift_title);
+    //addShift(start_day,shift_title);
     return;
 }
 
-//This function adds a shift to the shifts table
+//This function adds the shift number to the shift table.
+//It will require an update, if the position of the shift number changes on the table.
+function getShiftNum(){
+  let last_shift_num = $("#shifts tbody tr").last().text();
+  
+  if(last_shift_num == ""){
+    last_shift_num = 0;
+  }
+
+  let shift_num = parseInt(last_shift_num) + 1;
+
+  return shift_num;
+}
+
+/*This function adds a shift to the shifts table
 function addShift(d,n){
     var day = $("#months-days tr").find("td");
     var div = $('<div/>');
@@ -74,7 +118,7 @@ function addShift(d,n){
         return;
     });
     return;
-}
+}*/
 
 //This function clears the fields of the event form after successful submission
 function clearForm() {
@@ -92,7 +136,7 @@ function showHideForm(){
     if(!($('#shift-form-btn').hasClass('active'))){
         $("#shift-form-btn").addClass('active');
         $("#shift-form-btn").removeClass('fa-plus');
-        $("#shift-form-btn").addClass('fa-minus');
+        $("#shift-form-btn").addClass('fa-minus clickable');
         $("#shift-form").toggle();
     }else if($('#shift-form-btn').hasClass('active')){
         $("#shift-form-btn").removeClass('active');
@@ -103,117 +147,119 @@ function showHideForm(){
     return;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    $("#add-event-btn").on('click',()=>{
-      addEvent();
-    });
-  
-    $("#delete-event-btn").on('click',()=>{
-      deleteEvent();
-    });
+
+var calendar;
+//var bg = $("#background-color");
+//var e_name = $("#shift-title");
+//var start_date = $("#start-date");
+//var end_date = $("#end-date");
+
+//This function displays the scheduler calendar on clicking the show calendar button
+function displayCalendar(){
+  $("#show-calendar-btn").on('click',()=>{
+    if(!($('#show-calendar-btn').hasClass('active'))){
+      $("#show-calendar-btn").addClass('active');
+      $("#calendar-container").toggle();
+      initCalendar();
+      $("#show-calendar-btn").removeClass('fa-calendar-plus');
+      $("#show-calendar-btn").addClass('fa-calendar-minus');
+    }else if($('#show-calendar-btn').hasClass('active')){
+      $("#show-calendar-btn").removeClass('active');
+      $("#show-calendar-btn").removeClass('fa-calendar-minus');
+      $("#show-calendar-btn").addClass('fa-calendar-plus');
+      $("#calendar-container").toggle();
+    }
+    return;
   });
+}
+
+function initCalendar(){
+  var calendarEl = document.getElementById('calendar');
   
-  var calendar;
-  var bg = $("#background-color");
-  var e_name = $("#name");
-  var start_date = $("#start-date");
-  var end_date = $("#end-date");
+  calendar = new FullCalendar.Calendar(calendarEl, {
+    headerToolbar: {
+      center: 'title', 
+      left: 'dayGridMonth,timeGridWeek,timeGridDay today',
+      right: 'prev,next'      
+    },
+    timeZone: 'local',
+    initialView: 'dayGridMonth',
+    navLinks: true,
+    navLinkDayClick: function(date, jsEvent) {
+      console.log('day', date.toISOString());
+      console.log('coords', jsEvent.pageX, jsEvent.pageY);
+      console.log('Year', date.getFullYear());
+    },
+    events: [],
+    themeSystem: 'bootstrap',
+    bootstrapFontAwesome: {
+      close: 'fa-times',
+      prev: 'fa-chevron-left',
+      next: 'fa-chevron-right',
+      prevYear: 'fa-angle-double-left',
+      nextYear: 'fa-angle-double-right'
+    }
+  });
+
+  calendar.on('dateClick', function(info) {
+    console.log('clicked on ' + info.dateStr);
+  });
+
+  //calendar.setOption('locale');
+
+  calendar.render();
+}
+
+function addEventToCalendar(){
+  //Event name parts
+  var tr = $(this).parent().parent();
+  var e_name = tr.find('td').first().next().text();
+  console.log(e_name);
   
-  function showForm(){
-    $("#show-form-btn").on('click',()=>{
-      if($("#show-form-btn").text() == "Show Form"){
-        $("#show-form-btn").html('Hide Form');
-        $('#form').toggle();
-      }else{
-        $("#show-form-btn").html('Show Form');
-        $('#form').toggle();
-      }
-    });
-    return;
-  }
+  //Date parts
+  var date_str = tr.find('td').first().next().next().text();
+  var duration_parts = date_str.split("-");
   
-  //This function displays the scheduler calendar on clicking the show calendar button
-  function displayCalendar(){
-    $("#show-calendar-btn").on('click',()=>{
-      if(!($('#show-calendar-btn').hasClass('active'))){
-        $("#show-calendar-btn").addClass('active');
-        $("#calendar-container").toggle();
-        initCalendar();
-        $("#show-calendar-btn").removeClass('fa-calendar-plus');
-        $("#show-calendar-btn").addClass('fa-calendar-minus');
-      }else if($('#show-calendar-btn').hasClass('active')){
-        $("#show-calendar-btn").removeClass('active');
-        $("#show-calendar-btn").removeClass('fa-calendar-minus');
-        $("#show-calendar-btn").addClass('fa-calendar-plus');
-        $("#calendar-container").toggle();
-      }
-      return;
-    });
-  }
+  //Start date and time variables
+  var date1_parts = duration_parts[0].split(",");
+  var start_date = $.trim(date1_parts[0]);
+  //var start_time = $.trim(date1_parts[1]);
   
-  function initCalendar(){
-    var calendarEl = document.getElementById('calendar');
-    
-    calendar = new FullCalendar.Calendar(calendarEl, {
-      headerToolbar: {
-        center: 'title', 
-        left: 'dayGridMonth,timeGridWeek,timeGridDay today',
-        right: 'prev,next'      
-      },
-      timeZone: 'local',
-      initialView: 'dayGridMonth',
-      navLinks: true,
-      navLinkDayClick: function(date, jsEvent) {
-        console.log('day', date.toISOString());
-        console.log('coords', jsEvent.pageX, jsEvent.pageY);
-        console.log('Year', date.getFullYear());
-      },
-      events: [],
-      themeSystem: 'bootstrap',
-      bootstrapFontAwesome: {
-        close: 'fa-times',
-        prev: 'fa-chevron-left',
-        next: 'fa-chevron-right',
-        prevYear: 'fa-angle-double-left',
-        nextYear: 'fa-angle-double-right'
-      }
-    });
+  //End date and time variables
+  var date2_parts = duration_parts[1].split(",");
+  var end_date = $.trim(date2_parts[0]);
+  //var end_time = $.trim(date2_parts[1]);
   
-    calendar.on('dateClick', function(info) {
-      console.log('clicked on ' + info.dateStr);
-    });
+  let event_name = e_name == ""?start_date + ' event':e_name;
   
-    //calendar.setOption('locale');
+  calendar.addEvent({
+    id: getShiftNum(),
+    title: event_name,
+    start: start_date,
+    end: end_date,
+    backgroundColor: "green"
+  });
+  calendar.render();
+}
+
+function deleteEventFromCalendar(){
+  var tr = $(this).parent().parent();
+  var id = tr.find('td').first().text();
+  console.log(id);
   
-    calendar.render();
-  }
+  var events = calendar.getEvents();
   
-  function addEvent(){
-    let event_name = e_name.val() == ""?start_date.val() + ' event':e_name.val();
-    calendar.addEvent({
-      id: 0,
-      title: event_name,
-      start: start_date.val(),
-      end: end_date.val(),
-      backgroundColor: bg.val()
-    });
-    calendar.render();
-    console.log('Adding Event ');
-    return;
-  }
+  console.log('Deleting Event');
   
-  function deleteEvent(){
-    let events = calendar.getEvents();
-    let event_name = e_name.val() == ""?start_date.val() + ' event':e_name.val();
-    
-    events.forEach((event)=>{
-      if(event.title == event_name){
-        event.remove();      
-      }
-    });
-  
-    //calendar.getEventById(id).remove();
-    calendar.render();
-    console.log(event_name + ' event deleted');
-    return;
-  }
+  events.forEach((event)=>{
+    if(event.id == id){
+      event.remove();      
+    }
+  });
+
+  //calendar.getEventById(id).remove();
+  calendar.render();
+  console.log(id + ' is the id of the event deleted');
+  tr.remove();
+  return;
+}

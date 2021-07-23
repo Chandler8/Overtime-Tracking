@@ -10,14 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href='package/main.css' rel='stylesheet' />
     <script src='package/main.js'></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-	  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/scheduler.css">
 </head>
 <body>
     <main>
         <div class="container">
-            <h1>Scheduler Tool <i id="shift-form-btn" class="fas fa-plus fa-xs m-3"></i><i id="show-calendar-btn" class="far fa-calendar-plus fa-xs m-3"></i></h1>
+            <h1>Scheduler Tool <i id="shift-form-btn" class="fas fa-plus fa-xs clickable m-3"></i><i id="show-calendar-btn" class="far fa-calendar-plus fa-xs clickable m-3"></i></h1>
             <div class="container">
                 <div id="shift-form" class="m-2">
                     <div class="row">
@@ -55,16 +53,22 @@
                         <div class="container col-4">
                             <table id="shifts" class="table table-bordered">
                                 <thead>
-                                    <th colspan=2>AVAILABLE SHIFTS</th>
+                                    <th colspan=5>AVAILABLE SHIFTS</th>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>Shift Name</h4>
-                                        <th>Shift Schedule</h4>
+                                        <th>#</th>
+                                        <th>Shift Name</th>
+                                        <th>Shift Schedule</th>
+                                        <th>Add</th>
+                                        <th>Delete</th>
                                     </tr>
                                     <tr>
+                                        <td>1</td>
                                         <td>Mark Harmon's birthday party</td>
-                                        <td>(July 1, 2021) 4pm - 8pm</td>
+                                        <td>7/1/2021 - 7/1/2021, 4pm - 8pm</td>
+                                        <td><i class="fas fa-plus add-event-btn clickable"></i></td>
+                                        <td><i class="fas fa-minus delete-event-btn clickable"></i></td>
                                     </tr>
                                 </tbody>
                             </table>
