@@ -19,32 +19,36 @@
             <div class="container">
                 <div id="shift-form" class="m-2">
                     <div class="row">
-                        <div class="form-group col-2 m-1">
+                        <div class="form-group col col-md-12 col-sm-12 col-xs-12">
                             <label for="shift-title">Shift Title</label>
                             <input type="text" class="form-control" id="shift-title" name="title" required>
                         </div>
-                        <div class="form-group col-2 m-1">
-                            <label for="shift-description">Description</label>
+                        <div class="form-group col col-md-12 col-sm-12 col-xs-12">
+                            <label for="shift-description">Description <i>(Optional)</i></label>
                             <textarea class="form-control" id="shift-description" name="description"></textarea>
                         </div>
-                        <div class="form-group col m-1">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col col-lg col-md-12 col-sm-6 col-xs-12">
                             <label for="start-date">Shift Start Date</label>
                             <input type="date" class="form-control" id="start-date" name="start_date" required>
                         </div>
-                        <div class="form-group col m-1">
+                        <div class="form-group col col-lg col-md-12 col-sm-6 col-xs-12">
                             <label for="end-date">Shift End Date</label>
                             <input type="date" class="form-control" id="end-date" name="end_date" required>
                         </div>
-                        <div class="form-group col m-1">
+                        <div class="form-group col col-lg col-md-12 col-sm-6 col-xs-12">
                             <label for="start-time">Shift Start Time</label>
                             <input type="time" class="form-control" id="start-time" name="start_time" required>
                         </div>
-                        <div class="form-group col m-1">
+                        <div class="form-group col col-lg col-md-12 col-sm-6 col-xs-12">
                             <label for="end-time">Shift End Time</label>
                             <input type="time" class="form-control" id="end-time" name="end_time" required>
                         </div>
-                        <div class="form-group col m-1">
-                            <button type="submit" id="add-shift-btn" class="btn btn-primary col-1">Submit</button>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <button type="submit" id="add-shift-btn" class="btn btn-primary col col-lg-2 col-md-12">Submit</button>
                         </div>
                     </div>
                 </div>
