@@ -5,24 +5,24 @@ $(document).ready(()=>{
 });
 
 function getTotal(){
-    let pending = $("tr td.pc:last").html();
-    let booked = $("tr td.b:last").html();
-    let worked = $("tr td.w:last").html();
+    let pending = $("tr td div.pc:last").html();
+    let booked = $("tr td div.b:last").html();
+    let worked = $("tr td div.w:last").html();
 
     if(pending == ''){
         pending = 0
-        $("#timetable tbody tr td.pc:last").html(pending);
+        $("#timetable tbody tr td div.pc:last").html(pending);
     }
     if(booked == ''){
         booked = 0
-        $("#timetable tbody tr td.b:last").html(booked);
+        $("#timetable tbody tr td div.b:last").html(booked);
     }
     if(worked == ''){
         worked = 0
-        $("#timetable tbody tr td.w:last").html(worked);
+        $("#timetable tbody tr td div.w:last").html(worked);
     }
 
-    $("#timetable tbody tr td.ot:last").html(0);
+    $("#timetable tbody tr td div.ot:last").html(0);
     
     let total = parseFloat(pending) + parseFloat(booked) + parseFloat(worked);
     
@@ -30,17 +30,23 @@ function getTotal(){
 }
 
 function checkAmounts(){
-    $("#timetable tbody tr td").each(function(){
+    $("#timetable tbody tr td div").each(function(){
         let total = getTotal();
         
         if(total <= 40){
-            $("#timetable tbody tr td.pc:last,td.b:last,td.w:last,td.ot:last").css('background-color','lightgreen');
+            $("#timetable tbody tr td div.pc:last").css('color','lightgreen');
+            $("#timetable tbody tr td div.b:last").css('color','lightgreen');
+            $("#timetable tbody tr td div.w:last").css('color','lightgreen');
+            $("#timetable tbody tr td div.ot:last").css('color','lightgreen');
         }
         else{
             let got_OT = total - 40;
             
-            $("#timetable tbody tr td.ot:last").html(got_OT);
-            $("#timetable tbody tr td.pc:last,td.b:last,td.w:last,td.ot:last").css('background-color','red');
+            $("#timetable tbody tr td div.ot:last").html(got_OT);
+            $("#timetable tbody tr td div.pc:last").css('color','red');
+            $("#timetable tbody tr td div.b:last").css('color','red');
+            $("#timetable tbody tr td div.w:last").css('color','red');
+            $("#timetable tbody tr div.ot:last").css('color','red');
         }
     });
 }
