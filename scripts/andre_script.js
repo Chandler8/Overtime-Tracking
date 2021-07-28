@@ -53,22 +53,30 @@ function checkAmounts(){
 
 function addRow(){
     let name = $("#name").val();
+    let address = $("#address").val();
+    let phone = $("#phone").val();
+    let email = $("#email").val();
     let pending = $("#pending").val();
     let booked = $("#booked").val();
     let worked = $("#worked").val();
     let ot = $("#ot").val();
-    let shift = $("#shift").val();
     let last_num = $("#timetable th:last").text();
     let mynum = parseInt(last_num);
     let num = mynum + 1;
 
-    let row_str = "<tr><th scope='row'>" + num + 
-        "</th><td>"+ name +"</td><td class='pc'>" + 
-        pending + "</td><td class='b'>" + 
-        booked + "</td><td class='w'>" + 
-        worked + "</td><td class='ot'>" + 
-        ot + "</td><td class='shift'>" + 
-        shift + "</td></tr>";
+    let row_str = "<tr><th scope='row'>" + 
+        num + "</th>" + 
+        "<td colspan=1><div class='row b-0 p-1'>" + 
+        "<div class='pc col'>" + 
+        pending + "</div><div class='b col'>" + 
+        booked + "</div><div class='w col'>" + 
+        worked + "</div><div class='ot col'>" + 
+        ot + "</div>" + 
+        "</div></td><td>" + 
+        name + "</td><td>" + 
+        address + "</td><td>" +
+        phone + "</td><td>" + 
+        email + "</td></tr>";
 
     $("#timetable tbody").append(row_str);
     checkAmounts();

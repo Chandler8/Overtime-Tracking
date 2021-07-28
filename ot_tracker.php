@@ -16,38 +16,44 @@
                 <p><a href="index.php">Back to main page</a></p>
             </div>
             <div class="container">
-                <div class="row m-1">
-                    <div class="row m-1 justify-content-center">
+                <div class="row m-1 mb-2">
+                    <div class="form-group col m-1 justify-content-center">
                         <label for="name">Talent Name:</label>
-                        <input type="text" id="name">
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group col m-1 justify-content-center">
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+                    <div class="form-group col m-1 justify-content-center">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" class="form-control" id="phone">
+                    </div>
+                    <div class="form-group col m-1 justify-content-center">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email">
                     </div>
                 </div>
                 <div class="row m-1">
-                    <div class="row justify-content-center">
-                        <div class="col-2 align-self-center">Hours to submit:</div>
-                        <div class="col-1">
-                            <label for="pending">Pending</label>
-                            <input type="text" id="pending" size="3">
-                        </div>
-                        <div class="col-1 ml-1">
-                            <label for="booked">Booked</label>
-                            <input type="text" id="booked" size="3">
-                        </div>
-                        <div class="col-1 ml-1">
-                            <label for="worked">Worked</label>
-                            <input type="text" id="worked" size="3">
-                        </div>
-                        <div class="col-1 ml-1">
-                            <label for="ot">Overtime</label>
-                            <input type="text" id="ot" size="3">
-                        </div>
-                        <div class="col-3 ml-1">
-                            <label for="shift">Shift Title</label>
-                            <input type="text" id="shift">
-                        </div>
-                        <div class="col align-self-center">
-                            <div class="btn btn-success" onclick="addRow()">Submit</div>
-                        </div>
+                    <div class="col align-self-center">Hours to submit:</div>
+                    <div class="form-group col">
+                        <label for="pending">Pending</label>
+                        <input type="text" class="form-control" id="pending" size="3">
+                    </div>
+                    <div class="form-group col ml-1">
+                        <label for="booked">Booked</label>
+                        <input type="text" class="form-control" id="booked" size="3">
+                    </div>
+                    <div class="form-group col ml-1">
+                        <label for="worked">Worked</label>
+                        <input type="text" class="form-control" id="worked" size="3">
+                    </div>
+                    <div class="form-group col ml-1">
+                        <label for="ot">Overtime</label>
+                        <input type="text" class="form-control" id="ot" size="3">
+                    </div>
+                    <div class="col m-2">
+                        <div class="btn btn-success" onclick="addRow()">Submit</div>
                     </div>
                 </div>
                 <table id="timetable" class="table table-bordered">
@@ -63,7 +69,9 @@
                                 </div>
                             </th>
                             <th scope="col">Name</th>
-                            <th scope="col">Shift</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,7 +86,9 @@
                                 </div>
                             </td>
                             <td>Mark Jones</td>
-                            <td>Hawks game valet</td>
+                            <td>123 OLd Oak Tree Ln, Tuscany, GA 31032</td>
+                            <td>000-111-2345</td>
+                            <td>mjoootl@mymail.com</td>
                         </tr>
                     </tbody>
                 </table>
