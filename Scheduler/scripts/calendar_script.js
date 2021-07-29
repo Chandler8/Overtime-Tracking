@@ -89,7 +89,7 @@ function addEvent(){
     backgroundColor: bg.val()
   });
   calendar.render();
-  console.log('Adding Event ');
+  console.log('Adding Event '+ start_date.val()+ " thru " + end_date.val());
 }
 
 function deleteEvent(){

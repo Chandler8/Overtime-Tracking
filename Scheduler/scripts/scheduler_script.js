@@ -212,32 +212,42 @@ function initCalendar(){
 
 function addEventToCalendar(){
   //Event name parts
-  var tr = $(this).parent().parent();
-  var e_name = tr.find('td').first().next().text();
+  let tr = $(this).parent().parent();
+  let e_name = tr.find('td').first().next().text();
   console.log(e_name);
   
   //Date parts
-  var date_str = tr.find('td').first().next().next().text();
-  var duration_parts = date_str.split("-");
+  let date_str = tr.find('td').first().next().next().text();
+  let duration_parts = date_str.split("-");
   
   //Start date and time variables
-  var date1_parts = duration_parts[0].split(",");
-  var start_date = $.trim(date1_parts[0]);
-  //var start_time = $.trim(date1_parts[1]);
+  let date1_parts = duration_parts[0].split(",");
+  let start_date = $.trim(date1_parts[0]);
+  let start_date_split = start_date.split("/");
+  let start_month = start_date_split[0] < 10 ? "0" + start_date_split[0] : start_date_split[0];
+  let start_day = start_date_split[1];
+  let start_year = start_date_split[2];
+  let start_date_str = start_year+"-"+start_month+"-"+start_day;
+  //let start_time = $.trim(date1_parts[1]);
   
   //End date and time variables
-  var date2_parts = duration_parts[1].split(",");
-  var end_date = $.trim(date2_parts[0]);
-  //var end_time = $.trim(date2_parts[1]);
+  let date2_parts = duration_parts[1].split(",");
+  let end_date = $.trim(date2_parts[0]);
+  let end_date_split = end_date.split("/");
+  let end_month = end_date_split[0] < 10 ? "0" + end_date_split[0] : end_date_split[0];
+  let end_day = end_date_split[1];
+  let end_year = end_date_split[2];
+  let end_date_str = end_year+"-"+end_month+"-"+end_day;
+  //let end_time = $.trim(date2_parts[1]);
   
   let event_name = e_name == ""?start_date + ' event':e_name;
   
   calendar.addEvent({
     id: getShiftNum(),
     title: event_name,
-    start: start_date,
-    end: end_date,
-    backgroundColor: "green"
+    start: start_date_str,
+    end: end_date_str
+    //backgroundColor: "green"
   });
   calendar.render();
 }
