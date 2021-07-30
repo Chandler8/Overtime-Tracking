@@ -1,6 +1,10 @@
 <?php
 //Setup database connection
-$conn = require 'db_connect.php';
+require 'db_connect.php';
+
+$user = filter_input(INPUT_POST,'username');
+$pass1 = filter_input(INPUT_POST,'pwd1');
+$pass2 = filter_input(INPUT_POST,'pwd2');
 
 //Get user input
 if(isset($_POST['submit'])){
@@ -25,6 +29,8 @@ if(isset($_POST['submit'])){
     }
 
     if(!empty($user) && $pass1 == $pass2){
+        echo "Adding user: $user";
+
         try {
             $dbh = new PDO("mysql:host=$host", $root, $root_password);
 
@@ -42,10 +48,9 @@ if(isset($_POST['submit'])){
         echo "User created successfully";
         print_r(PDO::getAvailableDrivers());
         
-        $dbh = null;
-        return;
     }else{
         echo "Something's missing.";
-        return;
     }
+    
+    $dbh = null;
 }
