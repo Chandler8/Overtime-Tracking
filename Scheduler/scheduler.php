@@ -15,9 +15,10 @@
 <body>
     <main>
         <div class="container">
+            <p><a href="../user_form.php">New user form</a> | <a href="../ot_tracker.php">OT Tracker</a></p>
             <h1>Scheduler Tool <i id="shift-form-btn" class="fas fa-plus fa-xs clickable m-3"></i><i id="show-calendar-btn" class="far fa-calendar-plus fa-xs clickable m-3"></i></h1>
             <div class="container">
-                <div id="shift-form" class="m-2">
+                <div id="shift-form" class="container m-2">
                     <div class="row">
                         <div class="form-group col col-md-12 col-sm-12 col-xs-12">
                             <label for="shift-title">Shift Title</label>
@@ -52,35 +53,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div id="shift-table-container" class="container-fluid">
                     <div class="row">
                         <div class="container col-4">
-                            <table id="shifts" class="table table-bordered">
-                                <thead>
-                                    <th colspan=5>AVAILABLE SHIFTS</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Shift Name</th>
-                                        <th>Shift Schedule</th>
-                                        <th>Add</th>
-                                        <th>Delete</th>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Mark Harmon's birthday party</td>
-                                        <td>7/1/2021 - 7/1/2021, 4pm - 8pm</td>
-                                        <td><i class="fas fa-plus add-event-btn clickable"></i></td>
-                                        <td><i class="fas fa-minus delete-event-btn clickable"></i></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="calendar-container" class="container col-8">
-                            <div class="m-2">
-                                <div id='calendar'></div>
+                            <div class="col-12">
+                                <table id="shifts" class="table table-bordered">
+                                    <thead>
+                                        <th colspan=5>AVAILABLE SHIFTS</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Shift Name</th>
+                                            <th>Shift Schedule</th>
+                                            <th>Add</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mark Harmon's birthday party</td>
+                                            <td>7/1/2021 - 7/1/2021, 4pm - 8pm</td>
+                                            <td><i class="fas fa-plus add-event-btn clickable"></i></td>
+                                            <td><i class="fas fa-minus delete-event-btn clickable"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
+                        <div id="calendar-container" class="container col-7">
+                            <div id='calendar' class="col-12"></div>
                         </div>
                     </div>
                 </div>

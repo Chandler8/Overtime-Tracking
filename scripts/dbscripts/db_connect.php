@@ -6,6 +6,7 @@ $root = "root";
 $root_password = "";
 $db = "senegal_dummy_db";
 
+/*
 $username = filter_input($_POST,'username');
 $password = filter_input($_POST,'password');
 $email = filter_input($_POST,'email');
@@ -18,6 +19,7 @@ $state = filter_input($_POST,'state');
 $zip = filter_input($_POST,'zip');
 $country = filter_input($_POST,'country');
 $dob = filter_input($_POST,'dob');
+*/
 
 try {
     $dbh = new PDO("mysql:host=$host", $root, $root_password);

@@ -15,11 +15,12 @@ $zip = filter_input($_POST,'zip');
 $country = filter_input($_POST,'country');
 $dob = filter_input($_POST,'dob');
 
-
+//Check if which submit button is pressed and call the appropriate function
 if(isset($_POST['add_new_user_submit'])) {
     add_new_user();
 }
 
+//This function adds a new user to the database
 function add_new_user() {
     global $dbh;
     global $username;
