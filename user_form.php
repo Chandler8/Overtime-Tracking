@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="container">
+        <p><a href="ot_tracker.php">OT Tracker</a> | <a href="Scheduler/scheduler.php">Scheduler</a></p>
         <form action="scripts/process_request.php" method="POST">
             <div class="container">
                 <div class="row justify-content-center">
