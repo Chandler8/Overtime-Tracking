@@ -14,11 +14,11 @@
 </head>
 <body>
     <main>
-        <div class="container">
+        <div class="container-fluid">
             <p><a href="../user_form.php">New user form</a> | <a href="../ot_tracker.php">OT Tracker</a></p>
             <h1>Scheduler Tool <i id="shift-form-btn" class="fas fa-plus fa-xs clickable m-3"></i><i id="show-calendar-btn" class="far fa-calendar-plus fa-xs clickable m-3"></i></h1>
-            <div class="container">
-                <div id="shift-form" class="container m-2">
+            <div class="container-fluid">
+                <div id="shift-form" class="container">
                     <div class="row">
                         <div class="form-group col col-md-12 col-sm-12 col-xs-12">
                             <label for="shift-title">Shift Title</label>
@@ -80,7 +80,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div id="calendar-container" class="container col-7">
+                        <div id="calendar-container" class="container col-8">
                             <div id='calendar' class="col-12"></div>
                         </div>
                     </div>

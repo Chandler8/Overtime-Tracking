@@ -34,13 +34,19 @@ function addShift() {
     var start_time_array = start_time.split(":");
     var end_time_array = end_time.split(":");
     
-    if (start_time_array[0]%12 > 0) {
+    if (start_time == null || start_time == "") {
+        start_time = "12 PM";
+    }
+    else if (start_time_array[0]%12 > 0) {
         start_time = start_time_array[0] - 12 + ":" + start_time_array[1] + " PM";
     }else{
         start_time = start_time_array[0] + ":" + start_time_array[1] + " AM";
     }
     
-    if (end_time_array[0]%12 > 0) {
+    if (end_time == null || end_time == "") {
+        end_time = "12 AM";
+    }
+    else if (end_time_array[0]%12 > 0) {
         end_time = end_time_array[0] - 12 + ":" + end_time_array[1] + " PM";
     }else{
         end_time = end_time_array[0] + ":" + end_time_array[1] + " AM";
@@ -225,7 +231,7 @@ function addEventToCalendar(){
   let start_date = $.trim(date1_parts[0]);
   let start_date_split = start_date.split("/");
   let start_month = start_date_split[0] < 10 ? "0" + start_date_split[0] : start_date_split[0];
-  let start_day = start_date_split[1];
+  let start_day = start_date_split[1] < 10 ? "0" + start_date_split[1] : start_date_split[1];
   let start_year = start_date_split[2];
   let start_date_str = start_year+"-"+start_month+"-"+start_day;
   //let start_time = $.trim(date1_parts[1]);
@@ -235,7 +241,7 @@ function addEventToCalendar(){
   let end_date = $.trim(date2_parts[0]);
   let end_date_split = end_date.split("/");
   let end_month = end_date_split[0] < 10 ? "0" + end_date_split[0] : end_date_split[0];
-  let end_day = end_date_split[1];
+  let end_day = end_date_split[1] < 10 ? "0" + end_date_split[1] : end_date_split[1];
   let end_year = end_date_split[2];
   let end_date_str = end_year+"-"+end_month+"-"+end_day;
   //let end_time = $.trim(date2_parts[1]);
@@ -246,23 +252,21 @@ function addEventToCalendar(){
     id: getShiftNum(),
     title: event_name,
     start: start_date_str,
-    end: end_date_str
-    //backgroundColor: "green"
+    end: end_date_str,
+    backgroundColor: "green"
   });
   calendar.render();
 }
 
 function deleteEventFromCalendar(){
   var tr = $(this).parent().parent();
-  var id = tr.find('td').first().text();
-  console.log(id);
+  let name = tr.find('td').first().next().text();
   
   var events = calendar.getEvents();
   
-  console.log('Deleting Event');
-  
   events.forEach((event)=>{
-    if(event.id == id){
+    if(event.title == name){
+      console.log('Deleting Event ' . event.title);
       event.remove();      
     }
   });
