@@ -266,14 +266,13 @@ function deleteEventFromCalendar(){
   
   events.forEach((event)=>{
     if(event.title == name){
-      console.log('Deleting Event ' . event.title);
+      confirm('Delete event: ' + event.title);
       event.remove();      
     }
   });
 
   //calendar.getEventById(id).remove();
   calendar.render();
-  console.log(id + ' is the id of the event deleted');
   tr.remove();
   return;
 }
