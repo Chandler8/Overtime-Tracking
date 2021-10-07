@@ -82,6 +82,16 @@ select {
   text-align: center;
 }
 
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
 .days-shift {
     text-align: left;
 }
@@ -114,6 +124,9 @@ td.dates {
 
 #calendar-container {
   z-index: 0;
+}
+
+#calendar-view-container {
   display: none;
 }
 

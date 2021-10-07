@@ -4,11 +4,22 @@ $(document).ready(()=>{
     $('#shift-form-btn').on('click',showHideForm);
     $('#add-shift-btn').on('click',addShift);
     $(document).on('click',".add-event-btn",addEventToCalendar);
-    $(document).on('click',".delete-event-btn",deleteEventFromCalendar);    
-    displayCalendar();
-
+    $(document).on('click',".delete-event-btn",deleteEventFromCalendar);
+    changeView();
 });
+
+//This function adds all events to the calendar
+function addAllEventsToCalendar() {
+    let tr = $('#shifts').find('tbody').find('tr');
     
+    for (var i = 1; i < tr.length; i++) {
+        let event_title = tr[i].children[1].innerText;
+        let date_time = tr[i].children[2].innerText;
+
+        addEventToCalendarAtStart(event_title,date_time);    
+    }
+}
+
 //This function adds a shift to the shifts table
 function addShift() {
     var shift_title = document.getElementById("shift-title").value;
@@ -161,19 +172,22 @@ var calendar;
 //var end_date = $("#end-date");
 
 //This function displays the scheduler calendar on clicking the show calendar button
-function displayCalendar(){
+function changeView(){
   $("#show-calendar-btn").on('click',()=>{
     if(!($('#show-calendar-btn').hasClass('active'))){
       $("#show-calendar-btn").addClass('active');
-      $("#calendar-container").toggle();
+      $("#list-view-container").toggle();
+      $("#calendar-view-container").toggle();
       initCalendar();
+      addAllEventsToCalendar();
       $("#show-calendar-btn").removeClass('fa-calendar-plus');
       $("#show-calendar-btn").addClass('fa-calendar-minus');
     }else if($('#show-calendar-btn').hasClass('active')){
       $("#show-calendar-btn").removeClass('active');
       $("#show-calendar-btn").removeClass('fa-calendar-minus');
       $("#show-calendar-btn").addClass('fa-calendar-plus');
-      $("#calendar-container").toggle();
+      $("#calendar-view-container").toggle();
+      $("#list-view-container").toggle();
     }
     return;
   });
@@ -234,7 +248,7 @@ function addEventToCalendar(){
   // let start_day = start_date_split[1] < 10 ? "0" + start_date_split[1] : start_date_split[1];
   // let start_year = start_date_split[2];
   //let start_date_str = start_year+"-"+start_month+"-"+start_day;
-  let start_time = $.trim(date1_parts[1]);
+  //let start_time = $.trim(date1_parts[1]);
   
   //End date and time variables
   let date2_parts = duration_parts[1].split(",");
@@ -244,7 +258,7 @@ function addEventToCalendar(){
   // let end_day = end_date_split[1] < 10 ? "0" + end_date_split[1] : end_date_split[1];
   // let end_year = end_date_split[2];
   // let end_date_str = end_year+"-"+end_month+"-"+end_day;
-  let end_time = $.trim(date2_parts[1]);
+  //let end_time = $.trim(date2_parts[1]);
   
   let event_name = e_name == ""?start_date + ' event':e_name;
   
@@ -275,4 +289,31 @@ function deleteEventFromCalendar(){
   calendar.render();
   tr.remove();
   return;
+}
+
+function addEventToCalendarAtStart(title, date_times){
+  //Event name parts
+  let e_name = title;
+  
+  //Date parts
+  let date_str = date_times;
+  let duration_parts = date_str.split("|");
+  
+  //Start date and time variables
+   let date1_parts = duration_parts[0].split(",");
+   let start_date = $.trim(date1_parts[0]);
+  
+  //End date and time variables
+  let date2_parts = duration_parts[1].split(",");
+  let end_date = $.trim(date2_parts[0]);
+  let event_name = e_name == ""?start_date + ' event':e_name;
+  
+  calendar.addEvent({
+    id: getShiftNum(),
+    title: event_name,
+    start: start_date,
+    end: end_date,
+    backgroundColor: "green"
+  });
+  calendar.render();
 }

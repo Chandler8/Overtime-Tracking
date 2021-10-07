@@ -30,6 +30,12 @@
             $end_time = "00:00:00";
         }
 
+        if (empty($description) || $description == "") {
+            $description = "No description entered";
+        }
+
+        $query = "INSERT INTO events (title, description, start_date_time, end_date_time, tenant_id) VALUES (:title, :description, :start_date_time, :end_date_time, :tenant_id)";
+
         if ($title == null || $title == "" || $start_date == null || $start_date == "" || $end_date == null || $end_date == "") {
             echo "Error: Missing required field(s)";
             exit;
