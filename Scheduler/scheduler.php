@@ -131,7 +131,7 @@
                                                 echo "<td>" . $row['title'] . "</td>";
                                                 echo "<td>" . $start_date_time . " | " . $end_date_time . "</td>";
                                                 echo "<td><i class='fas fa-plus add-event-btn clickable'></i></td>";
-                                                echo "<td><a href='../scripts/dbscripts/delete_event.php'><i class='fas fa-minus delete-event-btn clickable'></i></a></td>";
+                                                echo "<td><a href='../scripts/dbscripts/delete_event.php?event_id=". $row['id']. "'><i class='fas fa-minus delete-event-btn clickable' name='delete_event'></i></a></td>";
                                                 // echo "<td><button class='add-event-btn btn btn-primary' data-id='" . $row['id'] . "'>Add</button></td>";
                                                 // echo "<td><button class='delete-event-btn btn btn-danger' data-id='" . $row['id'] . "'>Delete</button></td>";
                                                 echo "</tr>";
