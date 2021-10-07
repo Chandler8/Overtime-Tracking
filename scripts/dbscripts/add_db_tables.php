@@ -2,7 +2,7 @@
 //Get database connection
 require 'db_connect.php';
 
-print_r(PDO::getAvailableDrivers());
+//print_r(PDO::getAvailableDrivers());
 
 try {
     //Create tables if they don't already exist
@@ -51,14 +51,26 @@ try {
         PRIMARY KEY (id),
         FOREIGN KEY (user_id) REFERENCES users(id),
         FOREIGN KEY (tenant_id) REFERENCES tenants(id)
+    );","CREATE TABLE IF NOT EXISTS events (
+        id int(11) NOT NULL AUTO_INCREMENT,
+        created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+        updated_at timestamp DEFAULT CURRENT_TIMESTAMP,
+        tenant_id int(11) NOT NULL,
+        title varchar(255) NOT NULL,
+        description varchar(255) DEFAULT 'No description entered',
+        start_date_time datetime DEFAULT CURRENT_TIMESTAMP,
+        end_date_time datetime DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id),
+        FOREIGN KEY (tenant_id) REFERENCES tenants(id)
     );"];      
     
-    /*
+    
     //Add tables to database
     foreach ($tables as $table) {
         $dbh->exec($table);
     }
     
+    /*
     //Create tenant data to add to the tenants table
     $tenant_vals = [
         ["Senegal Software","app.senegalsoftware.com","ac8ca3e4aafae66a7c878c993e33f1da.png","1417 Dutch Valley Place","Atlanta","GA","30324","US","4045551234","https://www.senegalsoftware.com"],
@@ -116,6 +128,22 @@ try {
     foreach ($hours_vals as $hours_val) {
         $dbh->exec("INSERT INTO talent_hours (user_id,tenant_id,ot_approved_by,ot_approved_date,ot_approved_hrs)".
         "VALUES ('$hours_val[0]','$hours_val[1]','$hours_val[2]','$hours_val[3]','$hours_val[4]')");
+    }
+
+    //Create events data to add to the events table
+    $events_vals = [
+        ["1","Homecoming","2021-10-05 18:00:00","2021-10-05 22:00:00"],
+        ["1","Duckies","2021-10-09 17:00:00","2021-10-09 21:00:00"],
+        ["1","Karter\'s B-day","2021-10-12 00:00:00","2021-10-12 00:00:00"],
+        ["1","Cool Ranchers","2021-10-16 09:00:00","2021-10-16 14:00:00"],
+        ["1","Charleston","2021-10-23 19:00:00","2021-10-24 00:00:00"],
+        ["1","Pepsi Co.","2021-10-04 09:00:00","2021-10-08 17:00:00"]
+    ];
+
+    //Add events data to the events table
+    foreach ($events_vals as $events_val) {
+        $dbh->exec("INSERT INTO events (tenant_id,title,start_date_time,end_date_time)".
+        "VALUES ('$events_val[0]','$events_val[1]','$events_val[2]','$events_val[3]')");
     }
     */
 }
