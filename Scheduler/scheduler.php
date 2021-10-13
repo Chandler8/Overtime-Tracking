@@ -151,7 +151,7 @@
                 </div>
                 <div id="calendar-view-container" class="container-fluid">
                     <div class="row">
-                        <div id="shifts-container" class="container col-2  col-md-2">
+                        <div id="shifts-container" class="container col-2  col-md-2 ml-1">
                             <div class="col-12">
                                 <table id="shifts" class="table table-bordered">
                                     <thead>
@@ -203,7 +203,7 @@
                                             
                                             foreach($rows as $row) {
                                                 echo "<tr>";
-                                                echo "<td>" . $row['color'] . "</td>";
+                                                echo "<td><i class='fas fa-check-square fa-2x' style='color:" . $row['color'] . ";'></i></td>";
                                                 echo "<td colspan=2>" . $row['position_name'] . "</td>";
                                                 echo "</tr>";
                                             }

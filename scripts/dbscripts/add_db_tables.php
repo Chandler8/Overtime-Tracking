@@ -156,33 +156,32 @@ try {
         $dbh->exec("INSERT INTO events (tenant_id,title,start_date_time,end_date_time)".
         "VALUES ('$events_val[0]','$events_val[1]','$events_val[2]','$events_val[3]')");
     }
-    */
 
     //Create positions data to add to the positions table
-    // $positions_vals = [
-    //     ['1','No Position','',0.00,''],
-    //     ['1','Manager','Manages department',30.00,'#01579b'],
-    //     ['1','Team Leader','Oversees team',17.00,'#f57c00'],
-    //     ['1','Cashier','Cash register operator',15.00,'#66bb6a'],
-    //     ['1','Merchandiser','Handles display and maintenance of product at retail stores',15.00,'#ba4a00'],
-    //     ['1','Pharmacist','Manages pharmacy department',60.00,'#81d4fa'],
-    //     ['1','Server','Waits on tables and delivers food to customers',7.50,'#7e5109'],
-    //     ['1','Warehouse Worker','Handling packages in a warehouse setting',17.00,'#5c6bc0'],
-    //     ['1','Care Giver','Personal care assistant of disabled people',15.00,'#9ccc65'],
-    //     ['1','Caterer','Handling food preparations for events',15.00,'#ba68c8'],
-    //     ['1','Janitor','Maintains and cleans the store',15.00,'yellow'],
-    //     ['1','Security Guard','Enforces security at the store',16.00,'pink'],
-    //     ['1','Customer Service','Handles customer inquiries',15.00,'lightgreen'],
-    //     ['1','Receptionist','Handles customer inquiries',15.00,'#e74c3c'],
-    //     ['1','Sales Associate','Handles customer inquiries',15.00,'#f1c40f'],
-    // ];
+    $positions_vals = [
+        ['1','No Position','None selected',0.00,'#cacfd2'],
+        ['1','Manager','Manages department',30.00,'#01579b'],
+        ['1','Team Leader','Oversees team',17.00,'#f57c00'],
+        ['1','Cashier','Cash register operator',15.00,'#66bb6a'],
+        ['1','Merchandiser','Handles display and maintenance of product at retail stores',15.00,'#ba4a00'],
+        ['1','Pharmacist','Manages pharmacy department',60.00,'#81d4fa'],
+        ['1','Server','Waits on tables and delivers food to customers',7.50,'#7e5109'],
+        ['1','Warehouse Worker','Handling packages in a warehouse setting',17.00,'#5c6bc0'],
+        ['1','Care Giver','Personal care assistant of disabled people',15.00,'#9ccc65'],
+        ['1','Caterer','Handling food preparations for events',15.00,'#ba68c8'],
+        ['1','Janitor','Maintains and cleans the store',15.00,'yellow'],
+        ['1','Security Guard','Enforces security at the store',16.00,'pink'],
+        ['1','Customer Service','Handles customer inquiries',15.00,'lightgreen'],
+        ['1','Receptionist','Handles customer inquiries',15.00,'#e74c3c'],
+        ['1','Sales Associate','Handles customer inquiries',15.00,'#f1c40f'],
+    ];
 
-    // //Add positions data to the positions table
-    // foreach ($positions_vals as $positions_val) {
-    //     $dbh->exec("INSERT INTO positions (tenant_id,position_name,description,hourly_rate,color)".
-    //     "VALUES ('$positions_val[0]','$positions_val[1]','$positions_val[2]','$positions_val[3]','$positions_val[4]')");
-    // }
-
+    //Add positions data to the positions table
+    foreach ($positions_vals as $positions_val) {
+        $dbh->exec("INSERT INTO positions (tenant_id,position_name,description,hourly_rate,color)".
+        "VALUES ('$positions_val[0]','$positions_val[1]','$positions_val[2]','$positions_val[3]','$positions_val[4]')");
+    }
+    */
 }
 catch (PDOException $e) {
     die("DB ERROR: " . $e->getMessage());
