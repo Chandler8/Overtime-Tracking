@@ -18,9 +18,16 @@
 </head>
 <body>
     <main>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <ul>
+                    <li><a href="../user_form.php">New user form</a></li>
+                    <li><a href="../ot_tracker.php">OT Tracker</a></li>
+                </ul>
+                <h1>Scheduler Tool <i id="shift-form-btn" class="fas fa-plus fa-xs clickable m-3"></i><i id="show-calendar-btn" class="far fa-calendar-plus fa-xs clickable m-3"></i></h1>
+            </div>
+        </nav>
         <div class="container-fluid">
-            <p><a href="../user_form.php">New user form</a> | <a href="../ot_tracker.php">OT Tracker</a></p>
-            <h1>Scheduler Tool <i id="shift-form-btn" class="fas fa-plus fa-xs clickable m-3"></i><i id="show-calendar-btn" class="far fa-calendar-plus fa-xs clickable m-3"></i></h1>
             <div class="row">
 
                 <!--Uncomment below to add new tables to show a button to trigger the process.-->
