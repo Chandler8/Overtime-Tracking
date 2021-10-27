@@ -136,15 +136,29 @@ td.dates {
   justify-content: space-between;
 }
 
+.left-sidebar-item {
+  width: 100%;
+  background-color: white;
+  margin: 1em;
+}
+
 #calendar-container {
   z-index: 0;
   display: flex;
+  background-color: white;
+  margin: 1em;
 }
 
 #calendar-view-container {
   display: none;
+  background-color: #f2f3f4;
 }
 
 .clickable {
   cursor: pointer;
+}
+
+#new-fields-container {
+  background-color: lightgrey;
+  padding: 1em;
 }

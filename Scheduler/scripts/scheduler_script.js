@@ -2,7 +2,8 @@ $(document).ready(()=>{
     console.log("Ready!");
 
     $('#shift-form-btn').on('click',showHideForm);
-    $('#add-shift-btn').on('click',addShift);
+    // $('#add-shift-btn').on('click',addShift);
+    $('#add-shift').on('click',addColumnToShiftsTable);
     $('#add-new-field-link').on('click',showHideNewFieldForm);
     $('#add-field-btn').on('click',addRowToShiftsForm);
     $(document).on('click',".add-event-btn",addEventToCalendar);
@@ -27,6 +28,8 @@ var end_year = end_date.getFullYear();
 //Time variables
 var start_time = document.getElementById("start-time");
 var end_time = document.getElementById("end-time");
+
+//Special field variables
 
 //var event_color = $(this).parent().css( "background-color" );
 $('.position_select').change(function() {
@@ -140,6 +143,7 @@ function addShift() {
 function showHideNewFieldForm(){
   if($('#new-field-form').hasClass('d-none')){
     $('#new-field-form').removeClass('d-none');
+    $('#new-label').focus();
   }else{
     $('#new-field-form').addClass('d-none');
   }
@@ -148,12 +152,14 @@ function showHideNewFieldForm(){
 //This function adds a row to the shifts form
 function addRowToShiftsForm(){
   if(!$('#new-label').val() == ""){
+    $('#new-fields-container').removeClass('d-none');
+
     let new_label = $('#new-label').val();
     let field_desc = $('#new-field-description').val();
-    let label_str = '<div class="col-2"><label class="col-sm-2 col-form-label">'+new_label+'</label></div>';
-    let input_str = '<div class="col"><input type="text" class="form-control" id="'+new_label+'" name="'+new_label+'" placeholder="'+field_desc+'"></div>';
-    let delete_str = '<div class="col"><i class="fas fa-minus-square delete-field-btn clickable" onclick="deleteRowFromShiftsForm(this);"></i></div>';
-    let row_str = '<div class="form-group row">'+label_str+input_str+delete_str+'</div>';
+    let label_str = '<label for='+new_label+'>'+new_label+'</label>';
+    let input_str = '<input type="text" class="form-control special-field" id="'+new_label+'" name="'+new_label+'" placeholder="'+field_desc+'">';
+    let delete_str = '<div class="form-group col"><i class="fas fa-minus-square delete-field-btn clickable" onclick="deleteRowFromShiftsForm(this);"></i></div>';
+    let row_str = '<div class="row"><div class="form-group col col-lg col-md-12 col-sm-6 col-xs-12">'+label_str+input_str+'</div>'+delete_str+'</div>';
     $('#new-fields-container').append(row_str);
     $('#new-label').val('');
     $('#new-field-description').val('');
@@ -164,6 +170,25 @@ function addRowToShiftsForm(){
 //This function deletes a row from the shifts form
 function deleteRowFromShiftsForm(element){
   $(element).parent().parent().remove();
+
+  if($('#new-fields-container').children().length < 1){
+    $('#new-fields-container').addClass('d-none');
+  }
+}
+
+//This function adds a new column to the shifts table
+function addColumnToShiftsTable(){
+  if(!$('#new-fields-container').text() == ""){
+    let new_labels = $('#new-fields-container').find('label');
+    let length = new_labels.length;
+    let shifts_tbody_th = $('#shifts tbody tr').first();
+
+    for(var i = 0; i < length; i++){
+      if(new_labels[i].value != ""){
+        shifts_tbody_th.append('<th>'+new_labels[i].value+'</th>');
+      }
+    }
+  }
 }
 
 //This function adds the shift number to the shift table.

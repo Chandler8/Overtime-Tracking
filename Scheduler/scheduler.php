@@ -76,14 +76,14 @@
                                 <input type="time" class="form-control" id="end-time" name="end_time"><small><em>(Defaults to 12 AM)</em></small>
                             </div>
                         </div>
-                        <div id="new-fields-container"></div>
+                        <div id="new-fields-container" class="d-none"></div>
                         <div class="row">
                             <p class="col">Want to add a new field to the form, click <a id="add-new-field-link" href="#">here.</a></p>
                         </div>
                         <br>
                         <div class="row d-none" id="new-field-form">
                             <div class="form-group col col-lg col-md-12 col-sm-6 col-xs-12">
-                                <label for="new-label"><em>Enter a label for this new field</em></label>
+                                <label for="new-label"><em>Enter a label for your new field</em></label>
                                 <input type="text" class="form-control" id="new-label" name="">
                             </div>
                             <div class="form-group col col-lg col-md-12 col-sm-6 col-xs-12">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col">
-                                <button name="add_event_submit" class="btn btn-primary col col-lg-2 col-md-12">Submit</button>
+                                <button id="add-shift" name="add_event_submit" class="btn btn-primary col col-lg-2 col-md-12">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -106,7 +106,7 @@
                             <div class="col-12">
                                 <table id="shifts" class="table table-bordered">
                                     <thead>
-                                        <th colspan=10>AVAILABLE SHIFTS</th>
+                                        <th colspan=12>AVAILABLE SHIFTS</th>
                                     </thead>
                                     <tbody>
                                         <tr>
@@ -233,9 +233,9 @@
                 </div>
                 <div id="calendar-view-container" class="container-fluid">
                     <div class="row">
-                        <div id="left-sidebar-container" class="container col-2 col-md-3 col-sm-3">
+                        <div id="left-sidebar-container" class="container col-2 col-md-3 col-sm-3 m-2">
                             <div class="row">
-                                <div class="col">
+                                <div class="col left-sidebar-item">
                                     <div class="row">
                                         <div class="btn-group col" role="group">
                                             <button type="button" class="btn">
@@ -271,7 +271,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col left-sidebar-item">
                                     <table id="positions" class="table table-bordered">
                                         <thead>
                                             <th>Positions</th>
@@ -298,7 +298,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col left-sidebar-item">
                                     <table id="job_sites" class="table table-bordered">
                                         <thead>
                                             <th>Job Sites</th>
