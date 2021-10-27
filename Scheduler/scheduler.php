@@ -18,13 +18,17 @@
 </head>
 <body>
     <main>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <ul>
-                    <li><a href="../user_form.php">New user form</a></li>
-                    <li><a href="../ot_tracker.php">OT Tracker</a></li>
+                <ul  class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../user_form.php">New user form</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../ot_tracker.php">OT Tracker</a></li>
                 </ul>
-                <h1>Scheduler Tool <i id="shift-form-btn" class="fas fa-plus fa-xs clickable m-3"></i><i id="show-calendar-btn" class="far fa-calendar-plus fa-xs clickable m-3"></i></h1>
+                <div class="navbar-brand">Scheduler Tool</div>
+                <div class="navbar-nav">
+                    <i id="shift-form-btn" class="nav-link fas fa-plus fa-lg clickable m-3"></i>
+                    <i id="show-calendar-btn" class="nav-link far fa-calendar-plus fa-lg clickable m-3"></i>
+                </div>
             </div>
         </nav>
         <div class="container-fluid">
