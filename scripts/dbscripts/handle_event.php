@@ -68,7 +68,7 @@
 
         if(count($event_rows) > 0){
             foreach($event_rows as $event_row){
-                $sql = "UPDATE events SET assigned = ?, talent_assigned = ? WHERE id = ?";
+                $sql = "UPDATE events SET assigned = ?, assigned_to = ? WHERE id = ?";
                 $dbh->prepare($sql)->execute([$event_status, $talent_assigned, $event_id]);
                 header("Location: ../../Scheduler/scheduler.php");
             }
