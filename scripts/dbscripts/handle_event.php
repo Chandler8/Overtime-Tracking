@@ -8,6 +8,7 @@
     $start_time = filter_input(INPUT_POST, "start_time");
     $end_time = filter_input(INPUT_POST, "end_time");
     $tenant_id = 1;
+    //$event_id = $_GET['event_id'];
 
     // $title = "Titled";
     // $description = "Described";
@@ -34,7 +35,7 @@
             $description = "No description entered";
         }
 
-        //$query = "INSERT INTO events (title, description, start_date_time, end_date_time, tenant_id) VALUES (:title, :description, :start_date_time, :end_date_time, :tenant_id)";
+        $query = "INSERT INTO events (title, description, start_date_time, end_date_time, tenant_id) VALUES (:title, :description, :start_date_time, :end_date_time, :tenant_id)";
 
         if ($title == null || empty($title) || $start_date == null || empty($start_date) || $end_date == null || empty($end_date)) {
             echo "Error: Missing required field(s)";
@@ -43,5 +44,37 @@
             $query = "INSERT INTO events (tenant_id, title, description, start_date_time, end_date_time) VALUES (?,?,?,?,?)";
             $dbh->prepare($query)->execute([$tenant_id, $title, $description, $start_date_time, $end_date_time]);
             header("Location: ../../Scheduler/scheduler.php");
+        }
+    }
+
+    //Delete event from database
+    if(isset($_GET['delete_event'])){
+        $event_id = $_GET['event_id'];
+    
+        $query = "DELETE FROM events WHERE id = ?";
+        $dbh->prepare($query)->execute([$event_id]);
+        header("Location: ../../Scheduler/scheduler.php");
+    }
+
+    //Update event in database
+    if(isset($_GET['update_ready'])){
+        $event_id = $_GET['event_id'];
+        $event_status = $_GET['event_status'];
+        $talent_assigned = $_GET['talent_assigned'];
+
+        $query = "SELECT * FROM events WHERE id = $event_id;";
+        $result = $dbh->query($query);
+        $event_rows = $result->fetchAll(PDO::FETCH_ASSOC);
+
+        if(count($event_rows) > 0){
+            foreach($event_rows as $event_row){
+                $sql = "UPDATE events SET assigned = ?, talent_assigned = ? WHERE id = ?";
+                $dbh->prepare($sql)->execute([$event_status, $talent_assigned, $event_id]);
+                header("Location: ../../Scheduler/scheduler.php");
+            }
+        }
+        else{
+            echo "Error: Event not found";
+            exit;
         }
     }
