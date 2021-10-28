@@ -184,8 +184,10 @@ function addColumnToShiftsTable(){
     let shifts_tbody_th = $('#shifts tbody tr').first();
 
     for(var i = 0; i < length; i++){
-      if(new_labels[i].value != ""){
-        shifts_tbody_th.append('<th>'+new_labels[i].value+'</th>');
+      if(new_labels[i].innerText != ""){
+        let new_label = new_labels[i].innerText;
+        let new_label_capitalized = new_label.charAt(0).toUpperCase() + new_label.slice(1);
+        shifts_tbody_th.append('<th>'+new_label_capitalized+'</th>');
       }
     }
   }
